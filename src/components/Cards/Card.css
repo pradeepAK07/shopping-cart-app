@@ -1,0 +1,27 @@
+.Card {
+  text-align: center;
+  min-height: 19rem;
+  width: 17rem;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  background-color: rgb(240, 239, 239);
+  cursor: pointer;
+}
+.card-img {
+  height: 10rem;
+  width: 12rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: inset 0.4px 0.4px 4px rgb(173, 173, 173);
+}
+.offer,
+.card-title {
+  margin: 0.8rem;
+}
+.card-btn {
+  color: white;
+  background-color: rgb(57, 143, 197);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.6rem;
+}

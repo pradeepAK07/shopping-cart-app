@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(207, 207, 208);
+}
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(177, 202, 177);
+  color: rgb(0, 0, 0);
+  box-shadow: 0.4px 0.4px 4px rgb(189, 189, 189);
+  position: sticky;
+  top: 0;
+}
+.nav-header-container {
+  cursor: pointer;
+  width: 15vw;
+}
+.header {
+  color: rgba(15, 72, 141, 0.742);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+.links {
+  margin: 0;
+  cursor: pointer;
+}
+.nav-link {
+  width: 30vw;
+  display: flex;
+  justify-content: space-evenly;
+}
