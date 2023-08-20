@@ -3,16 +3,17 @@ import Card from "../Cards/Card";
 import axios from "axios";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { fetchProductData } from "../../features/productActionType";
 
-const Home = () => {
+const Home = ({ product, dispatch, fetchProductData }) => {
   const [productData, setProductData] = useState([]);
   const navigate = useNavigate();
 
-  const fetchProductData = async () => {
+  const fetchProduct = async () => {
     try {
       const response = await axios.get("https://dummyjson.com/products");
       const res = response.data.products;
-      console.log(res);
       setProductData(res);
     } catch (error) {
       console.log(error);
@@ -20,11 +21,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchProductData();
+    fetchProduct();
   }, []);
 
-  const HandlePageChange = () => {
-    navigate("/title");
+  const HandlePageChange = (title, id) => {
+    navigate(`/${title}`);
+    fetchProductData(id);
   };
 
   return (
@@ -38,4 +40,14 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => ({
+  product: state.product,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchProductData: (id) => dispatch(fetchProductData(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

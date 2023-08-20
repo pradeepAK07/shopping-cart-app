@@ -3,6 +3,7 @@ import "./Card.css";
 
 const Card = ({ data, HandlePageChange }) => {
   const {
+    id,
     brand,
     category,
     discountPercentage,
@@ -11,14 +12,14 @@ const Card = ({ data, HandlePageChange }) => {
     thumbnail,
     title,
   } = data;
-  console.log(data);
+
   return (
     <div className="Card">
       <p className="card-title">{title}</p>
       <img src={thumbnail} alt={title} className="card-img" />
       <p className="offer">Category : {category}</p>
-      <button className="card-btn" onClick={() => HandlePageChange()}>
-        Click to see more
+      <button className="card-btn" onClick={() => HandlePageChange(title, id)}>
+        More details..
       </button>
     </div>
   );

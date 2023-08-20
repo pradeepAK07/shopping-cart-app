@@ -9,10 +9,10 @@ const Base = () => {
     <>
       <NavBar />
       <div>
-        <Home />
         <Router>
           <Routes>
-            <Route path="/title" element={<SingleProduct />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/:title" element={<SingleProduct />} />
           </Routes>
         </Router>
       </div>

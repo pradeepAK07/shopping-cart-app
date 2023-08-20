@@ -5,7 +5,7 @@ export const navlinks = [
   },
   {
     id: 2,
-    linkName: " Shop",
+    linkName: " Cart",
   },
   {
     id: 3,

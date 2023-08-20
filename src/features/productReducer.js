@@ -1,15 +1,30 @@
-import { addProduct } from "./productActionType";
+import * as actions from "./productActionType";
 
 const initialState = {
-  singlrProduct: [],
+  singleProduct: [],
+  isLoading: false,
+  isError: [],
 };
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case addProduct:
+    case actions.fetchProductPending:
       return {
         ...state,
-        singlrProduct: action.payload,
+        isLoading: true,
+      };
+    case actions.fetchProductSuccess:
+      return {
+        ...state,
+        singleProduct: action.payload,
+        isLoading: false,
+      };
+    case actions.fetchProductFailure:
+      return {
+        ...state,
+        singleProduct: [],
+        isLoading: false,
+        isError: action.payload,
       };
     default:
       return state;
